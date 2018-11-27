@@ -1,5 +1,7 @@
 # PKI_WebShell
 [![Language](https://img.shields.io/badge/Lang-CSharp-blue.svg)](https://docs.microsoft.com/en-us/dotnet/csharp/)
+[![Language](https://img.shields.io/badge/Lang-Bash-red.svg)](https://www.gnu.org/software/bash/)
+[![Language](https://img.shields.io/badge/Lang-ASP.Net-green.svg)](https://www.asp.net/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Web shell for Microsoft IIS (.ashx) with a Linux Bash Script console. Built-in asymmetric+symmetric cryptography. Provides authentication and protection against mitm/eavesdropping/replay attacks.
