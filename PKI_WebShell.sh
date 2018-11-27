@@ -23,17 +23,21 @@ function webshell_gen() {
         sed -e "s/PublicCert = \"\";/PublicCert = \"$public_cert\";/g"
 }
 
-OPTIND=1
-
-while getopts "g:hu:k:c:" options; do
-    case "$options" in
-    h|\?)
+function print_help() {
         echo "PKI_WebShell by Paul Taylor @bao7uo"
         echo "  https://github.com/bao7uo/PKI_WebShell"
         echo "Generate webshell and private key:"
         echo "  ./PKI_Webshell_Client.sh -g test"
         echo "Run command:"
         echo "  ./PKI_Webshell_Client.sh -u https://test.local/test.ashx -k test.priv.key -c 'dir /as c:\'"
+}
+
+OPTIND=1
+
+while getopts "g:hu:k:c:" options; do
+    case "$options" in
+    h|\?)
+        print_help
         exit 0
         ;;
     g)  public_cert=$(cert_gen $OPTARG)
@@ -47,6 +51,11 @@ while getopts "g:hu:k:c:" options; do
     c)  cmd="$OPTARG"
     esac
 done
+
+if (( $OPTIND == 1 )); then
+   print_help
+   exit 0
+fi
 
 function url_encode() {
     echo -n $1 | xxd -plain | tr -d '\n' | sed 's/\(..\)/%\1/g'
