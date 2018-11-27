@@ -1,5 +1,5 @@
 # PKI_WebShell
-Web shell for Microsoft IIS with a Linux Bash Script console. Built-in asymmetric+symmetric cryptography. Provides authentication and protection against mitm/eavesdropping/replay attacks.
+Web shell for Microsoft IIS (.ashx) with a Linux Bash Script console. Built-in asymmetric+symmetric cryptography. Provides authentication and protection against mitm/eavesdropping/replay attacks.
 
 ## Usage
 
